@@ -4,12 +4,22 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build-css": "node-sass --include-path scss htdocs/assets/scss/style.scss htdocs/assets/style/style.css",
+		"watch:css": "nodemon -e scss -x \"npm run build-css\"",
+		"watch:browsersync": "browser-sync htdocs -w --reload-delay 2000 --no-open",
+		"start": "concurrently \"node index.js\" \"npm run watch:css\" \"npm run watch:browsersync\""
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"browser-sync": "^2.24.6",
+		"concurrently": "^3.6.1",
+		"dustjs-linkedin": "^2.7.5",
 		"express": "^4.15.2"
+	},
+	"devDependencies": {
+		"node-sass": "^4.9.2",
+		"nodemon": "^1.18.3"
 	}
 }

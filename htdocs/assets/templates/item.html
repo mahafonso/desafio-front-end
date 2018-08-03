@@ -1,0 +1,15 @@
+{#items}
+<article class="item" data-href="{url}">
+    <img src="assets/media/{image}" alt="{label}" class="img">
+
+    <div class="content">
+        <span class="department">{label}</span>
+        <span class="title">{title}</span>
+        <span class="text">{description}</span>
+
+        {?isSecondary} <a href="{url}" title="{label}" class="share"></a> {/isSecondary}
+    </div>
+
+    {^isSecondary} <a href="{url}" title="{label}" class="share"></a>{/isSecondary}
+</article>
+{/items}

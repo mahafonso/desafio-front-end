@@ -1,0 +1,42 @@
+// ===============================================================
+/* FOOTER */
+// ===============================================================
+footer {
+	background: #d5e11f;
+
+	.wrapper {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		@include breakpoint(560px, 'max') {
+			padding: 0;
+
+			.logo,
+			.copyright {
+				padding: 30px 0;
+				text-align: center;
+				width: 100%;
+			}
+
+			.logo {
+				img { margin: 0 auto; }
+			}
+
+			.copyright {
+				background: #004861;
+				color: #fff;
+			}
+		}
+	}
+
+	.txt {
+		display: block;
+		font-size: 10px;
+		text-align: right;
+		text-transform: uppercase;
+
+		@include breakpoint(560px, 'max') { text-align: center; }
+	}
+}
